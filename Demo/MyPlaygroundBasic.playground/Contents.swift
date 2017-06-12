@@ -38,3 +38,17 @@ print("A == B 结果为：\(A == B)")
 for index in 1..<5 {
     print("\(index) * 5 = \(index * 5)")
 }
+
+var index = 10
+switch index {
+case 100:
+    print("index 的值为 100")
+    fallthrough
+case 10, 15:
+    print("index 的值为 10 或 15")
+    fallthrough
+case 5:
+    print("index 的值为 5")
+default:
+    print("默认 case")
+}
