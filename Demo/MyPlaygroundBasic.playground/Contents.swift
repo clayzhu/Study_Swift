@@ -79,3 +79,20 @@ while index2 < 15 {
     }
     print("while 中 index2 的值为 \(index2)")
 }
+
+// 空字符串
+//var stringA: String
+// 使用字符串字面量创建空字符串
+var stringA = ""
+if stringA.isEmpty {
+    print("stringA 是空的")
+} else {
+    print("stringA 不是空的")
+}
+// 实例化 String 类来创建空字符串
+var stringB = String()
+if stringB.isEmpty {
+    print("stringA 是空的")
+} else {
+    print("stringA 不是空的")
+}
