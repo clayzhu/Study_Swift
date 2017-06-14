@@ -96,3 +96,24 @@ if stringB.isEmpty {
 } else {
     print("stringA 不是空的")
 }
+
+// 字符串连接
+let constA = "菜鸟教程："
+let constB = "http://www.runoob.com"
+let constC = constA + constB
+print(constC)
+// 检查字符串是否拥有特定前缀
+var hasPrefix: Bool = constC.hasPrefix(constA)
+// 比较两个字符串，对两个字符串的字母逐一比较
+var less: Bool = constA < constC
+
+// 遍历字符串中的字符
+var stringC = "Clay"
+for char in stringC.characters {
+    print(char)
+}
+
+// 字符串连接字符
+var varA: String = "Hello"
+var varB: Character = "C"
+varA.append(varB)
