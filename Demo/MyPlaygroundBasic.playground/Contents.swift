@@ -117,3 +117,17 @@ for char in stringC.characters {
 var varA: String = "Hello"
 var varB: Character = "C"
 varA.append(varB)
+
+// 创建数组
+var someInts = [Int](repeating: 10, count: 3)
+var someInts2 = [Int]()
+var someInts3: [Int] = [10, 10, 10]
+// 访问数组
+var someVar = someInts[0]
+print("第一个元素的值 \(someVar)")
+// 添加元素
+someInts.append(20)
+someInts += [30]
+// 通过索引修改数组元素的值
+someInts[2] = 11
+print(someInts)
