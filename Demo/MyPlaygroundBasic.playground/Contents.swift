@@ -131,3 +131,7 @@ someInts += [30]
 // 通过索引修改数组元素的值
 someInts[2] = 11
 print(someInts)
+// 遍历数组
+for (index, item) in someInts.enumerated() {
+    print("position:\(index), value:\(item)")
+}
