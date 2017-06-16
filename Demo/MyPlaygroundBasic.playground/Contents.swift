@@ -182,8 +182,27 @@ print("The status code is \(http200Status.statusCode)")
 print("The status message is \(http200Status.description)")
 
 // 函数
+// 局部参数名
 func runoob(name: String, site: String) -> String {
 //    return (name + site)
     return name + ": " + site
 }
-print(runoob(name:"菜鸟教程", site: "www.runoob.com"))
+print(runoob(name: "菜鸟教程", site: "www.runoob.com"))
+// 外部参数名
+func pow(firstArg a: Int, secondArg b: Int) -> Int {
+    var res = a
+    for _ in 1..<b {
+        res = res * a
+    }
+    print(res)
+    return res
+}
+pow(firstArg:5, secondArg:3)
+// 可变参数
+func vari<N>(members: N...) {   // 这是任意参数类型吗？
+    for i in members {
+        print(i)
+    }
+}
+vari(members: 1, 2)
+vari(members: "A", "B", "C")
