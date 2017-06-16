@@ -122,6 +122,7 @@ varA.append(varB)
 var someInts = [Int](repeating: 10, count: 3)
 var someInts2 = [Int]()
 var someInts3: [Int] = [10, 10, 10]
+var someInts4 = [10, 10, 10]
 // 访问数组
 var someVar = someInts[0]
 print("第一个元素的值 \(someVar)")
@@ -131,3 +132,14 @@ someInts += [30]
 // 通过索引修改数组元素的值
 someInts[2] = 11
 print(someInts)
+
+// 创建字典
+var someDict = [Int: String]()
+var someDict2: [Int: String] = [1: "One", 2: "Two", 3: "Three"]
+var someDict3 = [1: "One", 2: "Two", 3: "Three"]
+// 访问字典
+var someDictValue = someDict2[1]
+print("key = 1 的值为 \(someDictValue)")
+// 修改字典
+var oldDictValue = someDict2.updateValue("One New", forKey: 1)  // 返回旧值或 nil
+var newDictValue = someDict2[1]
