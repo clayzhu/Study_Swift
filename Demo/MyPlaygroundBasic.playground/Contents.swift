@@ -215,3 +215,24 @@ func swapTwoInts(_ a: inout Int, _ b: inout Int) {
 var x = 1, y = 5
 swap(&x, &y)
 print("x 现在的值 \(x), y 现在的值 \(y)")
+// 函数类型
+func sum(a: Int, b: Int) -> Int {
+    return a + b
+}
+var addition: (Int, Int) -> Int = sum
+print("输出结果：\(addition(40, 89))")
+func another(addition: (Int, Int) -> Int, a: Int, b: Int) {
+    print("输出结果：\(addition(a, b))")
+}
+another(addition: sum, a: 10, b: 20)
+// 函数嵌套
+func calcDecrement(forDecrement total: Int) -> () -> Int {
+    var overallDecrement = 0
+    func decrementer() -> Int {
+        overallDecrement -= total
+        return overallDecrement
+    }
+    return decrementer
+}
+let decrem = calcDecrement(forDecrement: 30)
+print(decrem())
