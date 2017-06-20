@@ -206,3 +206,12 @@ func vari<N>(members: N...) {   // 这是任意参数类型吗？
 }
 vari(members: 1, 2)
 vari(members: "A", "B", "C")
+// 常量，变量及 I/O 参数
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let tempA = a
+    a = b
+    b = tempA
+}
+var x = 1, y = 5
+swap(&x, &y)
+print("x 现在的值 \(x), y 现在的值 \(y)")
