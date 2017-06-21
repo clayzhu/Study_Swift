@@ -245,3 +245,17 @@ let divide = {(val1: Int, val2: Int) -> Int in
 }
 let result = divide(200, 20)
 print(result)
+// 闭包表达式
+// sorted 方法
+let names = ["AT", "AE", "D", "S", "BE"]
+// 使用普通函数(或内嵌函数)提供排序功能,闭包函数类型需为(String, String) -> Bool
+func descending(s1: String, s2: String) -> Bool {
+    return s1 > s2
+}
+var ascendingName = names.sorted()  // 升序
+var descendingName = names.sorted(by: descending)   // 降序
+var descendingName2 = names.sorted(by: { $0 > $1})  // 参数名称缩写
+print(descendingName2)
+var descendingName3 = names.sorted(by: >)   // 运算符函数
+var descendingName4 = names.sorted() {$0 > $1}  // 尾随闭包
+print(descendingName4)
