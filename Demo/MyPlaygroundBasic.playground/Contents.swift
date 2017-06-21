@@ -236,3 +236,12 @@ func calcDecrement(forDecrement total: Int) -> () -> Int {
 }
 let decrem = calcDecrement(forDecrement: 30)
 print(decrem())
+
+// 闭包
+let studname = { print("Swift 闭包实例。") }
+studname()
+let divide = {(val1: Int, val2: Int) -> Int in
+    return val1 / val2
+}
+let result = divide(200, 20)
+print(result)
