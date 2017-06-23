@@ -236,6 +236,7 @@ func calcDecrement(forDecrement total: Int) -> () -> Int {
 }
 let decrem = calcDecrement(forDecrement: 30)
 print(decrem())
+print(decrem())
 
 // 闭包
 let studname = { print("Swift 闭包实例。") }
@@ -259,3 +260,25 @@ print(descendingName2)
 var descendingName3 = names.sorted(by: >)   // 运算符函数
 var descendingName4 = names.sorted() {$0 > $1}  // 尾随闭包
 print(descendingName4)
+
+// 枚举
+// 相关值
+enum Student {
+    case Name(String)
+    case Mark(Int, Int, Int)
+}
+var studDetails = Student.Name("Runoob")
+var studMarks = Student.Mark(98, 97, 96)
+switch studMarks {
+case .Name(let studName):
+    print("学生的名字是：\(studName)")
+case .Mark(let Mark1, let Mark2, let Mark3):
+    print("学生的成绩是：\(Mark1), \(Mark2), \(Mark3)")
+}
+// 原始值
+enum Month: Int {
+    case Januray = 1, Febrary, March
+    case April, May, June, July, August, September, October, November, December
+}
+let yearMonthHash = Month.May.hashValue // 从0开始
+let yearMonthRaw = Month.May.rawValue   // 从 Januray = 1 开始
