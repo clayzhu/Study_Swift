@@ -282,3 +282,12 @@ enum Month: Int {
 }
 let yearMonthHash = Month.May.hashValue // 从0开始
 let yearMonthRaw = Month.May.rawValue   // 从 Januray = 1 开始
+
+// 结构体
+struct studentMarks {
+    var mark1 = 100
+    var mark2 = 78
+    var mark3 = 98
+}
+let marks = studentMarks()
+print("Mark1 是 \(marks.mark1)")
