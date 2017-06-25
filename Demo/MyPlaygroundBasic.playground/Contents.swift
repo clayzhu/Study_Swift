@@ -291,3 +291,14 @@ struct studentMarks {
 }
 let marks = studentMarks()
 print("Mark1 是 \(marks.mark1)")
+struct MarksStruct {
+    var mark: Int
+    init(markA: Int) {
+        self.mark = markA
+    }
+}
+var aStruct = MarksStruct(markA: 98)
+var bStruct = aStruct
+bStruct.mark = 97
+print(aStruct.mark)
+print(bStruct.mark)
