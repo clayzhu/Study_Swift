@@ -302,3 +302,37 @@ var bStruct = aStruct
 bStruct.mark = 97
 print(aStruct.mark)
 print(bStruct.mark)
+
+// 类
+class studentMarksClass {
+    var mark1 = 100
+    var mark2 = 78
+    var mark3 = 98
+}
+let marksInstance = studentMarksClass()
+print("Mark1 是 \(marksInstance.mark1)")
+
+// 恒等运算符
+class SampleClass: Equatable {
+    let myProperty: String
+    init(s: String) {
+        self.myProperty = s
+    }
+}
+func ==(lhs: SampleClass, rhs: SampleClass) -> Bool {   // 实现 Equatable 的协议
+    return lhs.myProperty == rhs.myProperty
+}
+let spClass1 = SampleClass(s: "Hello World")
+let spClass2 = SampleClass(s: "Hello World")
+if spClass1 == spClass2 {
+    print("相同的属性值")
+}
+if spClass1 != spClass2 {
+    print("不相同的属性值")
+}
+if spClass1 === spClass2 {
+    print("引用相同的类实例")
+}
+if spClass1 !== spClass2 {
+    print("引用不相同的类实例")
+}
