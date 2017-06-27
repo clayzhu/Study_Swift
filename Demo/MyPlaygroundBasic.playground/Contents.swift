@@ -474,3 +474,14 @@ let absClass = AbsClass.abs(number: -35)
 let absStruct = AbsStruct.abs(number: -5)
 print(absClass)
 print(absStruct)
+
+// 下标脚本
+struct SubscriptStruct {
+    let decrementer: Int
+    subscript(index: Int) -> Int {
+        return decrementer / index
+    }
+}
+let division = SubscriptStruct(decrementer: 100)
+print("100 / 9 = \(division[9])")
+print("100 / 2 = \(division[2])")
