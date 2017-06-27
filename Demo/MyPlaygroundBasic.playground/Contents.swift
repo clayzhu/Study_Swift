@@ -398,22 +398,30 @@ let NewCounter = Samplepgm()
 NewCounter.counter = 100
 NewCounter.counter = 800
 // 类型属性
-struct StudMarks {
+struct StudMarksStruct {
     static let markCount = 97
     static var totalCount = 0
     var InternalMarks: Int = 0 {
         didSet {
-            if InternalMarks > StudMarks.markCount {
-                InternalMarks = StudMarks.markCount
+            if InternalMarks > StudMarksStruct.markCount {
+                InternalMarks = StudMarksStruct.markCount
             }
-            if InternalMarks > StudMarks.totalCount {
-                StudMarks.totalCount = InternalMarks
+            if InternalMarks > StudMarksStruct.totalCount {
+                StudMarksStruct.totalCount = InternalMarks
             }
         }
     }
 }
-var stud1Mark1 = StudMarks()
-var stud1Mark2 = StudMarks()
+class StudMarksClass {
+    class var markCount: Int {
+        return 97
+    }
+    class var totalCount: Int {
+        return 0
+    }
+}
+var stud1Mark1 = StudMarksStruct()
+var stud1Mark2 = StudMarksStruct()
 stud1Mark1.InternalMarks = 98
 print(stud1Mark1.InternalMarks)
 stud1Mark2.InternalMarks = 87
@@ -443,3 +451,26 @@ var val = area(length: 3, breadth: 5)
 val.scaleBy(res: 3)
 val.scaleBy(res: 30)
 val.scaleBy(res: 300)
+// 类型方法
+class AbsClass {
+    class func abs(number: Int) -> Int {
+        if number < 0 {
+            return (-number)
+        } else {
+            return number
+        }
+    }
+}
+struct AbsStruct {
+    static func abs(number: Int) -> Int {
+        if number < 0 {
+            return (-number)
+        } else {
+            return number
+        }
+    }
+}
+let absClass = AbsClass.abs(number: -35)
+let absStruct = AbsStruct.abs(number: -5)
+print(absClass)
+print(absStruct)
