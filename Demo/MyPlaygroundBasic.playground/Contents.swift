@@ -418,3 +418,25 @@ stud1Mark1.InternalMarks = 98
 print(stud1Mark1.InternalMarks)
 stud1Mark2.InternalMarks = 87
 print(stud1Mark2.InternalMarks)
+
+// 方法
+// 在实例方法中修改值类型
+struct area {
+    var length = 1
+    var breadth = 1
+    
+    func area() -> Int {
+        return length * breadth
+    }
+    mutating func scaleBy(res: Int) {
+        length *= res
+        breadth *= res
+        
+        print(length)
+        print(breadth)
+    }
+}
+var val = area(length: 3, breadth: 5)
+val.scaleBy(res: 3)
+val.scaleBy(res: 30)
+val.scaleBy(res: 300)
