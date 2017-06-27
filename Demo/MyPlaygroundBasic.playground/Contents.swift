@@ -429,8 +429,11 @@ struct area {
         return length * breadth
     }
     mutating func scaleBy(res: Int) {
-        length *= res
-        breadth *= res
+//        length *= res
+//        breadth *= res
+        // 在可变方法中给 self 赋值
+        self.length *= res
+        self.breadth *= res
         
         print(length)
         print(breadth)
