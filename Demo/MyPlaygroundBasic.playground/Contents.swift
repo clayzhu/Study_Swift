@@ -480,6 +480,15 @@ struct SubscriptStruct {
     let decrementer: Int
     subscript(index: Int) -> Int {
         return decrementer / index
+        
+//        // Getter, Setter
+//        get {
+//            return decrementer / index
+//        }
+//        set(newValue) {
+//            // let 常量不能更改值，这里仅作语法示例
+//            self.decrementer = newValue;
+//        }
     }
 }
 let division = SubscriptStruct(decrementer: 100)
