@@ -525,3 +525,23 @@ print("\(mat[0,0])")
 print("\(mat[0,1])")
 print("\(mat[1,0])")
 print("\(mat[1,1])")
+
+// 继承
+class StudDetails {
+    var mark1: Int
+    var mark2: Int
+    init(stm1: Int, results stm2: Int) {
+        mark1 = stm1
+        mark2 = stm2
+    }
+    func show() {
+        print("Mark1:\(self.mark1), Mark2:\(self.mark2)")
+    }
+}
+class StudTomDetails : StudDetails {
+    init() {
+        super.init(stm1: 93, results: 89)
+    }
+}
+let tomDetails = StudTomDetails();
+tomDetails.show()
