@@ -545,3 +545,36 @@ class StudTomDetails : StudDetails {
 }
 let tomDetails = StudTomDetails();
 tomDetails.show()
+// 重写
+class CircleClass {
+    var radius = 12.5
+    func show() {
+        print("这是超类")
+    }
+    var area: String {
+        return "矩形的半径为 \(radius)"
+    }
+}
+class RectangleClass : CircleClass {
+    var side = 7
+    override func show() {  // 重写方法
+        print("这是子类")
+    }
+    override var area: String { // 重写属性
+        return super.area + "，但现在被重写为 \(side)"
+    }
+}
+let rect = RectangleClass()
+rect.radius = 25.0
+rect.side = 3
+print("半径：\(rect.area)")
+class SquareClass : RectangleClass {
+    override var radius: Double {   // 重写属性观察器
+        didSet {
+            side = Int(radius / 5.0) + 1
+        }
+    }
+}
+let square = SquareClass();
+square.radius = 100.0
+print("半径：\(square.area)")
