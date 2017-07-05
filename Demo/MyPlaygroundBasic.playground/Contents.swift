@@ -609,3 +609,29 @@ print("面积为：\(area2.area)")
 // 调用不提供外部名字
 let rectarea = RectangleStruct(180.0)
 print("面积为: \(rectarea.area)")
+
+// 类的继承和构造过程
+class MainClass {
+    var no1: Int    // 局部存储变量
+    // 指定构造器
+    init(no1: Int) {
+        self.no1 = no1  // 初始化
+    }
+}
+class MainSubClass : MainClass {
+    var no2: Int    // 新的子类存储变量
+    init(no1: Int, no2: Int) {
+        self.no2 = no2  // 初始化
+        super.init(no1: no1)    // 初始化超类
+    }
+    // 便利构造器
+    override convenience init(no1: Int) {
+        self.init(no1: no1, no2: 0)
+    }
+}
+let res = MainClass(no1: 20)
+let res2 = MainSubClass(no1: 30, no2: 50)
+let res3 = MainSubClass(no1: 10)
+print("res.no1 = \(res.no1)")
+print("res2.no1 = \(res2.no1), no2 = \(res2.no2)")
+print("res3.no1 = \(res3.no1), no2 = \(res3.no2)")
