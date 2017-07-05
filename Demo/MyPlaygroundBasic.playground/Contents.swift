@@ -578,3 +578,25 @@ class SquareClass : RectangleClass {
 let square = SquareClass();
 square.radius = 100.0
 print("半径：\(square.area)")
+
+// 构造过程
+// 构造器-构造参数
+struct RectangleStruct {
+    var length: Double
+    var breadth: Double
+    var area: Double
+    init(fromLength length: Double, fromBreadth breadth: Double) {
+        self.length = length
+        self.breadth = breadth
+        area = length * breadth
+    }
+    init(fromLeng leng: Double, fromBread bread: Double) {
+        self.length = leng
+        self.breadth = bread
+        area = leng * bread
+    }
+}
+let area1 = RectangleStruct(fromLength: 6, fromBreadth: 12)
+print("面积为：\(area1.area)")
+let area2 = RectangleStruct(fromLeng: 36, fromBread: 12)
+print("面积为：\(area2.area)")
