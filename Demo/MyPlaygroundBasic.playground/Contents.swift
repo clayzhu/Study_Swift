@@ -595,8 +595,17 @@ struct RectangleStruct {
         self.breadth = bread
         area = leng * bread
     }
+    //不提供外部名字
+    init(_ area: Double) {
+        length = area
+        breadth = area
+        self.area = area * area
+    }
 }
 let area1 = RectangleStruct(fromLength: 6, fromBreadth: 12)
 print("面积为：\(area1.area)")
 let area2 = RectangleStruct(fromLeng: 36, fromBread: 12)
 print("面积为：\(area2.area)")
+// 调用不提供外部名字
+let rectarea = RectangleStruct(180.0)
+print("面积为: \(rectarea.area)")
