@@ -635,3 +635,23 @@ let res3 = MainSubClass(no1: 10)
 print("res.no1 = \(res.no1)")
 print("res2.no1 = \(res2.no1), no2 = \(res2.no2)")
 print("res3.no1 = \(res3.no1), no2 = \(res3.no2)")
+
+// 类的可失败构造器
+class StudRecord {
+    let studname: String
+    init?(studname: String) {
+        self.studname = studname
+        if studname.isEmpty {
+            return nil
+        }
+    }
+    init!(stname: String) {
+        if stname.isEmpty {
+            return nil
+        }
+        self.studname = stname
+    }
+}
+if let stname = StudRecord(studname: "失败构造器") {
+    print("模块为 \(stname.studname)")
+}
