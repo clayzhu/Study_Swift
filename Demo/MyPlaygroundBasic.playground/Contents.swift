@@ -670,3 +670,34 @@ var show: BaseClass? = BaseClass()
 print(counter)
 show = nil
 print(counter)
+
+// 可选链
+class Person {
+    
+}
+// 定义了一个变量 rooms，它被初始化为一个Room[]类型的空数组
+class Residence {
+    
+}
+// Room 定义一个name属性和一个设定room名的初始化器
+class Room {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+// 模型中的最终类叫做Address
+class Address {
+    var buildingName: String?
+    var buildingNumber: String?
+    var street: String?
+    func buildingIdentifier() -> String? {
+        if buildingName != nil {
+            return buildingName
+        } else if buildingNumber != nil {
+            return buildingNumber
+        } else {
+            return nil
+        }
+    }
+}
