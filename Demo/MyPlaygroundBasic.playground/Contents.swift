@@ -655,3 +655,18 @@ class StudRecord {
 if let stname = StudRecord(studname: "失败构造器") {
     print("模块为 \(stname.studname)")
 }
+
+// 析构过程
+var counter = 0
+class BaseClass {
+    init() {
+        counter += 1
+    }
+    deinit {
+        counter -= 1
+    }
+}
+var show: BaseClass? = BaseClass()
+print(counter)
+show = nil
+print(counter)
