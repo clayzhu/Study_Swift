@@ -717,3 +717,61 @@ if john.residence?.printNumberOfRooms() != nil {
 } else {
     print("无法输出房间号")
 }
+
+// 自动引用计数（ARC）
+// 解决实例之间的循环强引用
+// 弱引用实例
+class Module {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    var sub: SubModule?
+    deinit {
+        print("\(name) 主模块")
+    }
+}
+class SubModule {
+    let number: Int
+    init(number: Int) {
+        self.number = number
+    }
+    weak var topic: Module?
+    deinit {
+        print("子模块 topic 数为 \(number)")
+    }
+}
+var toc: Module?
+var list: SubModule?
+toc = Module(name: "ARC")
+list = SubModule(number: 4)
+toc!.sub = list
+list!.topic = toc
+toc = nil
+list = nil;
+// 无主引用实例
+class Module2 {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    var sub: SubModule2?
+    deinit {
+        print("\(name) 主模块2")
+    }
+}
+class SubModule2 {
+    let number: Int
+    init(number: Int, topic: Module2) {
+        self.number = number
+        self.topic = topic
+    }
+    unowned var topic: Module2
+    deinit {
+        print("子模块2 topic 数为 \(number)")
+    }
+}
+var toc2: Module2?
+toc2 = Module2(name: "ARC2")
+toc2!.sub = SubModule2(number: 4, topic: toc2!)
+toc2 = nil
