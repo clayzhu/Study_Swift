@@ -890,3 +890,42 @@ print("除法运算后的值: \(division2)")
 
 let mix = 30.add + 34.sub
 print("混合运算结果：\(mix)")
+
+// 协议
+// 对属性的规定
+protocol ClassA {
+    var marks: Int { get set }
+    var result: Bool { get }
+    
+    func attendance() -> String
+    func markssecured() -> String
+}
+protocol ClassB: ClassA {
+    var present: Bool { get set }
+    var subject: String { get set }
+    var stname: String { get set }
+}
+class ClassC: ClassB {
+    var marks = 96
+    let result = true
+    
+    var present = false
+    var subject = "Swift 协议"
+    var stname = "Protocols"
+    
+    func attendance() -> String {
+        return "The \(stname) has secured 99% attendance"
+    }
+    func markssecured() -> String {
+        return "\(stname) has scored \(marks)"
+    }
+}
+let studdet = ClassC()
+studdet.stname = "Swift"
+studdet.marks = 98
+print(studdet.markssecured())
+print(studdet.marks)
+print(studdet.result)
+print(studdet.present)
+print(studdet.subject)
+print(studdet.stname)
