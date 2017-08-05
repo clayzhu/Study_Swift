@@ -944,3 +944,36 @@ for lists in [1, 2, 3].map({i in i * 5}) {
 }
 print([100, 200, 300])
 print([1, 2, 3].map({i in i * 10}))
+
+// 泛型
+// 泛型类型
+struct Stack<Element> {
+    var items = [Element]()
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element {
+        return items.removeLast()
+    }
+}
+var stackOfStrings = Stack<String>()
+print("字符串元素入栈：")
+stackOfStrings.push("Google")
+stackOfStrings.push("Runoob")
+print(stackOfStrings.items)
+let deletetos = stackOfStrings.pop()
+print("出栈元素：" + deletetos)
+var stackOfInts = Stack<Int>()
+print("整数元素入栈：")
+stackOfInts.push(1)
+stackOfInts.push(2)
+print(stackOfInts.items)
+// 扩展泛型类型
+extension Stack {
+    var topItem: Element? {
+        return items.isEmpty ? nil : items[items.count - 1]
+    }
+}
+if let topItem = stackOfStrings.topItem {
+    print("栈中的顶部元素是：\(topItem).")
+}
