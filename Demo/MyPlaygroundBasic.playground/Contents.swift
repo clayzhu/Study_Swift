@@ -60,9 +60,11 @@ case 100:
     fallthrough // 控制转移语句
 case 10, 15:
     print("index 的值为 10 或 15")
-    fallthrough
+    fallthrough // 将会贯穿到下一个 case，不会检查下一个 case 的匹配条件
 case 5:
     print("index 的值为 5")
+case 8:
+    print("index 的值为 8")
 default:
     print("默认 case")
 }
@@ -81,20 +83,20 @@ while index2 < 15 {
 }
 
 // 空字符串
-//var stringA: String
+var stringA: String
 // 使用字符串字面量创建空字符串
-var stringA = ""
-if stringA.isEmpty {
+var stringB = ""
+if stringB.isEmpty {
     print("stringA 是空的")
 } else {
     print("stringA 不是空的")
 }
 // 实例化 String 类来创建空字符串
-var stringB = String()
-if stringB.isEmpty {
-    print("stringA 是空的")
+var stringC = String()
+if stringC.isEmpty {
+    print("stringB 是空的")
 } else {
-    print("stringA 不是空的")
+    print("stringB 不是空的")
 }
 
 // 字符串连接
@@ -108,8 +110,11 @@ var hasPrefix: Bool = constC.hasPrefix(constA)
 var less: Bool = constA < constC
 
 // 遍历字符串中的字符
-var stringC = "Clay"
-for char in stringC.characters {
+var stringD = "Clay"
+//for char in stringD.characters {    // 'characters' is deprecated: Please use String or Substring directly
+//    print(char)
+//}
+for char in stringD {
     print(char)
 }
 
@@ -163,7 +168,7 @@ for (index, value) in someDict2.enumerated() {
     print("index:\(index), value:\(value)")
 }
 print("someDict2 含有 \(someDict3.count) 个键值对")
-print("someDict3.isEmpty = \(someDict.isEmpty)")
+print("someDict.isEmpty = \(someDict.isEmpty)")
 
 // 元组
 let http404Error = (404, "Not Found")
