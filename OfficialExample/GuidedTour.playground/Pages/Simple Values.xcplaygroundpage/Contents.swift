@@ -24,6 +24,9 @@ let implicitInteger = 70
 let implicitDouble = 70.0
 let explicitDouble: Double = 70
 
+// Experiment
+let myLet: Float = 4
+
 //: - Experiment:
 //: Create a constant with an explicit type of `Float` and a value of `4`.
 //:
@@ -32,6 +35,9 @@ let explicitDouble: Double = 70
 let label = "The width is "
 let width = 94
 let widthLabel = label + String(width)
+
+// Experiment
+//let widthLabel2 = label + width // error: Binary operator '+' cannot be applied to operands of type 'String' and 'Int'
 
 //: - Experiment:
 //: Try removing the conversion to `String` from the last line. What error do you get?
@@ -43,6 +49,12 @@ let oranges = 5
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 
+// Experiment
+let float1: Float = 1
+let float2: Float = 2
+let name = "Tom"
+let greeting = "Hi, \(name), you have \(float1 + float2) apples."
+
 //: - Experiment:
 //: Use `\()` to include a floating-point calculation in a string and to include someone’s name in a greeting.
 //:
@@ -52,6 +64,9 @@ let quotation = """
 I said "I have \(apples) apples."
 And then I said "I have \(apples + oranges) pieces of fruit."
 """
+
+// Experiment
+print(quotation)
 
 //: Create arrays and dictionaries using brackets (`[]`), and access their elements by writing the index or key in brackets. A comma is allowed after the last element.
 //:

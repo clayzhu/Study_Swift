@@ -7,6 +7,12 @@ func greet(person: String, day: String) -> String {
 }
 greet(person: "Bob", day: "Tuesday")
 
+// Experiment
+func greet2(person: String, lunchSpecial: String) -> String {
+    return "Hello \(person), today is \(lunchSpecial)."
+}
+greet2(person: "Bob", lunchSpecial: "fish")
+
 //: - Experiment:
 //: Remove the `day` parameter. Add a parameter to include today’s lunch special in the greeting.
 //:
@@ -82,6 +88,15 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 //:
 numbers.map({ (number: Int) -> Int in
     let result = 3 * number
+    return result
+})
+
+// Experiment
+numbers.map({ (number: Int) -> Int in
+    let result = number
+    if result % 2 != 0 {
+        return 0
+    }
     return result
 })
 

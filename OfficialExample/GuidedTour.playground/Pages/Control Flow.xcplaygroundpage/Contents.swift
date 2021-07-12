@@ -26,6 +26,15 @@ if let name = optionalName {
     greeting = "Hello, \(name)"
 }
 
+// Experiment
+var optionalName2: String? = nil
+var greeting2 = "Hello!"
+if let name = optionalName2 {
+    greeting2 = "Hello, \(name)"
+} else {
+    greeting2 = "Hello, no name."
+}
+
 //: - Experiment:
 //: Change `optionalName` to `nil`. What greeting do you get? Add an `else` clause that sets a different greeting if `optionalName` is `nil`.
 //:
@@ -47,7 +56,7 @@ switch vegetable {
         print("That would make a good tea sandwich.")
     case let x where x.hasSuffix("pepper"):
         print("Is it a spicy \(x)?")
-    default:
+    default:    // Experiment: error: Switch must be exhaustive
         print("Everything tastes good in soup.")
 }
 
@@ -74,6 +83,25 @@ for (_, numbers) in interestingNumbers {
     }
 }
 print(largest)
+
+// Experiment
+let interestingNumbers2 = [
+    "Prime": [2, 3, 5, 7, 11, 13],
+    "Fibonacci": [1, 1, 2, 3, 5, 8],
+    "Square": [1, 4, 9, 16, 25],
+]
+var largestType2 = ""
+var largest2 = 0
+for (type, numbers) in interestingNumbers2 {
+    for number in numbers {
+        if number > largest2 {
+            largestType2 = type
+            largest2 = number
+        }
+    }
+}
+print(largestType2)
+print(largest2)
 
 //: - Experiment:
 //: Replace the `_` with a variable name, and keep track of which kind of number was the largest.
