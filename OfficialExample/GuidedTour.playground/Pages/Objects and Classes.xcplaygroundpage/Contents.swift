@@ -7,6 +7,12 @@ class Shape {
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
     }
+    
+    // Experiment
+    let aConst = 1.2
+    func anotherMethod(para: Int) -> Int {
+        return para * 2
+    }
 }
 
 //: - Experiment:
@@ -61,6 +67,27 @@ class Square: NamedShape {
 let test = Square(sideLength: 5.2, name: "my test square")
 test.area()
 test.simpleDescription()
+
+// Experiment
+class Circle: NamedShape {
+    var radius: Double
+    
+    init(radius: Double, name: String) {
+        self.radius = radius
+        super.init(name: name)
+    }
+    
+    func area() -> Double {
+        return 3.14 * radius * radius
+    }
+    
+    override func simpleDescription() -> String {
+        return "A circle with radius \(radius)."
+    }
+}
+let testCircle = Circle(radius: 2.0, name: "my test circle")
+testCircle.area()
+testCircle.simpleDescription()
 
 //: - Experiment:
 //: Make another subclass of `NamedShape` called `Circle` that takes a radius and a name as arguments to its initializer. Implement an `area()` and a `simpleDescription()` method on the `Circle` class.
