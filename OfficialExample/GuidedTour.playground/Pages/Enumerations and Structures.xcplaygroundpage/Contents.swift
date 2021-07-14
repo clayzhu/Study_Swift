@@ -21,9 +21,19 @@ enum Rank: Int {
                 return String(self.rawValue)
         }
     }
+    
+    // Experiment
+    func compareRaw(other: Rank) -> Bool {
+        return self.rawValue == other.rawValue
+    }
 }
 let ace = Rank.ace
 let aceRawValue = ace.rawValue
+
+// Experiment
+let queen = Rank.queen
+let queenRawValue = queen.rawValue
+print(ace.compareRaw(other: queen))
 
 //: - Experiment:
 //: Write a function that compares two `Rank` values by comparing their raw values.
@@ -53,9 +63,23 @@ enum Suit {
                 return "clubs"
         }
     }
+    
+    
+    // Experiment
+    func color() -> String {
+        switch self {
+        case .spades, .clubs:
+            return "black"
+        case .hearts, .diamonds:
+            return "red"
+        }
+    }
 }
 let hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
+
+// Experiment
+let heartsColor = hearts.color()
 
 //: - Experiment:
 //: Add a `color()` method to `Suit` that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
@@ -67,16 +91,22 @@ let heartsDescription = hearts.simpleDescription()
 enum ServerResponse {
     case result(String, String)
     case failure(String)
+    
+    // Experiment
+    case unknown(String)
 }
 
 let success = ServerResponse.result("6:00 am", "8:09 pm")
 let failure = ServerResponse.failure("Out of cheese.")
+let unknown = ServerResponse.unknown("Unknown")
 
 switch success {
     case let .result(sunrise, sunset):
         print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
     case let .failure(message):
         print("Failure...  \(message)")
+    case let .unknown(message):
+        print("Unknown... \(message)")
 }
 
 //: - Experiment:
@@ -92,9 +122,25 @@ struct Card {
     func simpleDescription() -> String {
         return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
     }
+    
+    // Experiment
+    func combinationDeck() -> [Card] {
+        let ranks = [Rank.ace, Rank.two, Rank.three, Rank.four, Rank.five, Rank.six, Rank.seven, Rank.eight, Rank.nine, Rank.ten, Rank.jack, Rank.queen, Rank.king]
+        let suits = [Suit.spades, Suit.hearts, Suit.diamonds, Suit.clubs]
+        var cards: [Card] = []
+        for suit in suits {
+            for rank in ranks {
+                cards.append(Card(rank: rank, suit: suit))
+            }
+        }
+        return cards
+    }
 }
 let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+// Experiment
+let deckCards = threeOfSpades.combinationDeck()
 
 //: - Experiment:
 //: Write a function that returns an array containing a full deck of cards, with one card of each combination of rank and suit.
