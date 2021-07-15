@@ -5,6 +5,9 @@
 protocol ExampleProtocol {
      var simpleDescription: String { get }
      mutating func adjust()
+    
+    // Experiment
+    func toString() -> String
 }
 
 //: Classes, enumerations, and structs can all adopt protocols.
@@ -15,6 +18,11 @@ class SimpleClass: ExampleProtocol {
      func adjust() {
           simpleDescription += "  Now 100% adjusted."
      }
+    
+    // Experiment
+    func toString() -> String {
+        return "SimpleClass"
+    }
 }
 var a = SimpleClass()
 a.adjust()
@@ -25,10 +33,16 @@ struct SimpleStructure: ExampleProtocol {
      mutating func adjust() {
           simpleDescription += " (adjusted)"
      }
+    
+    // Experiment
+    func toString() -> String {
+        return "SimpleStructure"
+    }
 }
 var b = SimpleStructure()
 b.adjust()
 let bDescription = b.simpleDescription
+let toString = b.toString()
 
 //: - Experiment:
 //: Add another requirement to `ExampleProtocol`. What changes do you need to make to `SimpleClass` and `SimpleStructure` so that they still conform to the protocol?
@@ -44,8 +58,21 @@ extension Int: ExampleProtocol {
     mutating func adjust() {
         self += 42
     }
+    
+    // Experiment
+    func toString() -> String {
+        return "extension Int"
+    }
  }
 print(7.simpleDescription)
+
+// Experiment
+extension Double {
+    var absoluteValue: Double {
+        return self
+    }
+}
+print(3.2.absoluteValue)
 
 //: - Experiment:
 //: Write an extension for the `Double` type that adds an `absoluteValue` property.
