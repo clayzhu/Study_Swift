@@ -26,13 +26,25 @@ do {
     print(error)
 }
 
+// Experiment
+do {
+    let printerResponse = try send(job: 1040, toPrinter: "Never Has Toner")
+    print(printerResponse)
+} catch {
+    print(error)
+}
+
 //: - Experiment:
 //: Change the printer name to `"Never Has Toner"`, so that the `send(job:toPrinter:)` function throws an error.
 //:
 //: You can provide multiple `catch` blocks that handle specific errors. You write a pattern after `catch` just as you do after `case` in a switch.
 //:
 do {
-    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+//    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+//    print(printerResponse)
+    
+    // Experiment
+    let printerResponse = try send(job: 1440, toPrinter: "Never Has Toner")
     print(printerResponse)
 } catch PrinterError.onFire {
     print("I'll just put this over here, with the rest of the fire.")
