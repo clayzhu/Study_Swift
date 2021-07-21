@@ -28,4 +28,10 @@ print(delimiterStr)
 print(delimiterStr2)
 let isSame3 = delimiterStr == delimiterStr2
 
+// # 连接字符串和字符
+let exclamationMark: Character = "!"
+var welcome = "hello" + " "
+welcome.append("there")
+welcome.append(exclamationMark)
+
 //: [Next](@next)
