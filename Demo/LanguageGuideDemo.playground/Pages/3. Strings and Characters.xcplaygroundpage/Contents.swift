@@ -34,4 +34,16 @@ var welcome = "hello" + " "
 welcome.append("there")
 welcome.append(exclamationMark)
 
+// # Unicode
+// 建议阅读：https://juejin.cn/post/6844903543279730702
+// ## 可扩展的字形群集
+let eAcute: Character = "\u{E9}"
+let combinedEAcute: Character = "\u{65}\u{301}"
+
+let enclosedEAcute: Character = "\u{E9}\u{20DD}"
+
+let regionalIndicatorForU: Character = "\u{1F1FA}"
+let regionalIndicatorForS: Character = "\u{1F1F8}"
+let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
+
 //: [Next](@next)
