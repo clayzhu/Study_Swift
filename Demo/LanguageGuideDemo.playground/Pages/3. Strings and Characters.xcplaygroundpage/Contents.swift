@@ -47,5 +47,12 @@ let regionalIndicatorForS: Character = "\u{1F1F8}"
 let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
 
 //: # 访问和修改字符串
+//: ## 字符串索引
+let greeting = "Guten Tag!"
+greeting[greeting.startIndex]
+greeting[greeting.index(before: greeting.endIndex)]
+greeting[greeting.index(after: greeting.startIndex)]
+let index = greeting.index(greeting.startIndex, offsetBy: 7)
+greeting[index]
 
 //: [Next](@next)
