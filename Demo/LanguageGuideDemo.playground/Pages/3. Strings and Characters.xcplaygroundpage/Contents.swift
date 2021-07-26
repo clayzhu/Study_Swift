@@ -55,4 +55,12 @@ greeting[greeting.index(after: greeting.startIndex)]
 let index = greeting.index(greeting.startIndex, offsetBy: 7)
 greeting[index]
 
+//: # 子字符串
+var beginning = greeting[..<index]
+print("String: \(greeting)")
+print("Substring: \(beginning)")
+beginning.remove(at: greeting.index(greeting.startIndex, offsetBy: 5))
+print("String: \(greeting)")
+print("Substring: \(beginning)")
+
 //: [Next](@next)
