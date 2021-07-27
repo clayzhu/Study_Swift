@@ -63,4 +63,10 @@ beginning.remove(at: greeting.index(greeting.startIndex, offsetBy: 5))
 print("String: \(greeting)")
 print("Substring: \(beginning)")
 
+//: # 比较字符串
+//: ## 字符串/字符相等
+if eAcute == combinedEAcute {
+    print("These two strings are considered equal.")
+}
+
 //: [Next](@next)
