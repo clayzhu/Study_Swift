@@ -20,4 +20,16 @@ for (index, value) in shoppingList.enumerated() {
     print("Item \(index + 1): \(value)")
 }
 
+//: # 集合
+//: ## 用数组字面量创建集合
+var favoriteGenres: Set<String> = ["Rock", "Classical", "Hip hop"]
+
+//: ## 遍历一个集合
+for genre in favoriteGenres {
+    print("\(genre)")
+}
+for genre in favoriteGenres.sorted() {
+    print("\(genre)")
+}
+
 //: [Next](@next)
